@@ -34,7 +34,7 @@ public class FlightMovement : MonoBehaviour
     void FixedUpdate()
     {
         var direction = new Vector3(movementInput.x, 0, movementInput.y);
-        direction = lookTransform.rotation * direction;
+        direction = Quaternion.LookRotation(Vector3.ProjectOnPlane(lookTransform.forward, Vector3.up)) * direction;
 
         var force = direction * acceleration;
         rb.AddForce(force, ForceMode.Acceleration);
