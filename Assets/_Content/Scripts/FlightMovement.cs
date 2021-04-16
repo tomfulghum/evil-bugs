@@ -35,12 +35,13 @@ public class FlightMovement : MonoBehaviour
     {
         var direction = new Vector3(movementInput.x, 0, movementInput.y);
         direction = lookTransform.rotation * direction;
-        var planarVelocity = Vector3.ProjectOnPlane(rb.velocity, Vector3.up);
 
-        var accelerationMultiplier = 1f - Mathf.InverseLerp(maxVelocity - .5f, maxVelocity, planarVelocity.magnitude);
-        var force = direction * acceleration * accelerationMultiplier;
-
+        var force = direction * acceleration;
         rb.AddForce(force, ForceMode.Acceleration);
+
+        var planarVelocity = Vector3.ProjectOnPlane(rb.velocity, Vector3.up);
+        planarVelocity = Vector3.ClampMagnitude(planarVelocity, maxVelocity);
+        rb.velocity = new Vector3(planarVelocity.x, rb.velocity.y, planarVelocity.z);
     }
 
     public void OnFlap()
@@ -49,7 +50,6 @@ public class FlightMovement : MonoBehaviour
         if (rb.velocity.y > 0)
             forceMultiplier = 1f - Mathf.InverseLerp(0f, maxUpwardVelocity, rb.velocity.y);
 
-        Debug.Log(forceMultiplier);
         rb.AddForce(0, flapForce * forceMultiplier, 0, ForceMode.Acceleration); 
     }
 
