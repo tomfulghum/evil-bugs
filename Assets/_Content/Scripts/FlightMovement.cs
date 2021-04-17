@@ -41,7 +41,8 @@ public class FlightMovement : MonoBehaviour
 
         var planarVelocity = Vector3.ProjectOnPlane(rb.velocity, Vector3.up);
         planarVelocity = Vector3.ClampMagnitude(planarVelocity, maxVelocity);
-        rb.velocity = new Vector3(planarVelocity.x, rb.velocity.y, planarVelocity.z);
+        var verticalVelocity = Mathf.Clamp(rb.velocity.y, -maxUpwardVelocity, maxUpwardVelocity);
+        rb.velocity = new Vector3(planarVelocity.x, verticalVelocity, planarVelocity.z);
     }
 
     public void OnFlap()
