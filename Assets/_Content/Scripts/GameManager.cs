@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] GameObject playerCamera;
+    [SerializeField] TextMeshProUGUI[] ingredientEntries;
 
     [Header("Configuration")]
     [SerializeField] int recipeLength = 5;
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
         {
             int ingredientIndex = Random.Range(0, (int)IngredientType.Cleanser);
             recipe[i] = (IngredientType)ingredientIndex;
+            ingredientEntries[i].text = recipe[i].ToString();
             Debug.Log(recipe[i]);
         }
     }
