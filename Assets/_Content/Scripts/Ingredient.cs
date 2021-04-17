@@ -6,7 +6,7 @@ public enum IngredientType
 {
     Eye,
     Ratpoop,
-    INGREDIENT_TYPE_COUNT
+    None
 }
 
 public class Ingredient : MonoBehaviour

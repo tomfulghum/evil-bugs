@@ -12,7 +12,7 @@ public class ObjectGrabber : MonoBehaviour
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponentInParent<Rigidbody>();
     }
 
     public void OnGrab()
@@ -40,19 +40,18 @@ public class ObjectGrabber : MonoBehaviour
         grabbedObject.zMotion = ConfigurableJointMotion.Limited;
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Grabbable"))
+        if (other.CompareTag("Grabbable"))
         {
-            grabbableObject = collision.gameObject.GetComponent<ConfigurableJoint>();
-            var contact = collision.contacts[0];
-            localGrabPosition = grabbableObject.transform.InverseTransformPoint(contact.point);
+            grabbableObject = other.GetComponentInParent<ConfigurableJoint>();
+            localGrabPosition = grabbableObject.transform.InverseTransformPoint(transform.position);
         }
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject == grabbableObject)
+        if (other.gameObject == grabbableObject)
             grabbableObject = null;
     }
 }

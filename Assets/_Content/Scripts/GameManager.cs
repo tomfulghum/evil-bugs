@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         recipe = new IngredientType[recipeLength];
         for (int i = 0; i < recipeLength; i++)
         {
-            int ingredientIndex = Random.Range(0, (int)IngredientType.INGREDIENT_TYPE_COUNT);
+            int ingredientIndex = Random.Range(0, (int)IngredientType.None);
             recipe[i] = (IngredientType)ingredientIndex;
             Debug.Log(recipe[i]);
         }

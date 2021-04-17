@@ -14,7 +14,14 @@ public class FlightMovement : MonoBehaviour
     [SerializeField] float maxVelocity = 5f;
     [SerializeField] Transform lookTransform;
 
+    [Header("Rotation")]
+    [SerializeField] float facingTorque = 1f;
+    [SerializeField] float uprightTorque = 1f;
+    [SerializeField] float angularCorrectionTime = 0.1f;
+
     Vector2 movementInput;
+    Vector3 facingDirection;
+    Vector3 angularCorrectionVelocity;
 
     Rigidbody rb;
 
@@ -36,6 +43,9 @@ public class FlightMovement : MonoBehaviour
         var direction = new Vector3(movementInput.x, 0, movementInput.y);
         direction = Quaternion.LookRotation(Vector3.ProjectOnPlane(lookTransform.forward, Vector3.up)) * direction;
 
+        if (direction != Vector3.zero)
+            facingDirection = direction;
+
         var force = direction * acceleration;
         rb.AddForce(force, ForceMode.Acceleration);
 
@@ -43,6 +53,16 @@ public class FlightMovement : MonoBehaviour
         planarVelocity = Vector3.ClampMagnitude(planarVelocity, maxVelocity);
         var verticalVelocity = Mathf.Clamp(rb.velocity.y, -maxUpwardVelocity, maxUpwardVelocity);
         rb.velocity = new Vector3(planarVelocity.x, verticalVelocity, planarVelocity.z);
+
+        var facingRotation = Quaternion.FromToRotation(Vector3.ProjectOnPlane(transform.forward, Vector3.up), facingDirection);
+        var uprightRotation = Quaternion.FromToRotation(transform.up, Vector3.up);
+        var facingTorqueVector = new Vector3(facingRotation.x, facingRotation.y, facingRotation.z) * facingTorque;
+        var uprightTorqueVector = new Vector3(uprightRotation.x, uprightRotation.y, uprightRotation.z) * uprightTorque;
+        rb.AddTorque(facingTorqueVector);
+        rb.AddTorque(uprightTorqueVector);
+
+        var correctedAngularVelocity = Vector3.SmoothDamp(rb.angularVelocity, Vector3.zero, ref angularCorrectionVelocity, angularCorrectionTime);
+        rb.angularVelocity = correctedAngularVelocity;
     }
 
     public void OnFlap()
