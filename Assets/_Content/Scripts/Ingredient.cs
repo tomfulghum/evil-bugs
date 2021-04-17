@@ -4,8 +4,14 @@ using UnityEngine;
 
 public enum IngredientType
 {
+    Frogleg,
     Eye,
-    Ratpoop,
+    DeadBug,
+    Mandrake,
+    Feder,
+    Tooth,
+    Plant,
+    Mushroom,
     Cleanser,
     None
 }
