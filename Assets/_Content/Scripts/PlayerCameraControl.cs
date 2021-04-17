@@ -43,7 +43,7 @@ public class PlayerCameraControl : MonoBehaviour
 
     public void OnLookX(InputValue value)
     {
-        if (manager.inputDisabled)
+        if (manager && manager.inputDisabled)
             return;
 
         mouseDeltaX = (float)value.Get();
@@ -51,7 +51,7 @@ public class PlayerCameraControl : MonoBehaviour
 
     public void OnLookY(InputValue value)
     {
-        if (manager.inputDisabled)
+        if (manager && manager.inputDisabled)
             return;
 
         mouseDeltaY = (float)value.Get();

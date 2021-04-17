@@ -68,7 +68,7 @@ public class FlightMovement : MonoBehaviour
 
     public void OnFlap()
     {
-        if (manager.inputDisabled)
+        if (manager && manager.inputDisabled)
             return;
 
         float forceMultiplier = 1f;
@@ -80,7 +80,7 @@ public class FlightMovement : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        if (manager.inputDisabled)
+        if (manager && manager.inputDisabled)
             return;
 
         movementInput = value.Get<Vector2>();

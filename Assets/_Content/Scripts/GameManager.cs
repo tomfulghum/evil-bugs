@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         }
 
         addedIngredients.Add(type);
-        if (addedIngredients.Count <= recipe.Length && type == recipe[addedIngredients.Count - 1] && wrongIngredients == 0)
+         if (addedIngredients.Count <= recipe.Length && type == recipe[addedIngredients.Count - 1] && wrongIngredients == 0)
         {
             correctIngredients++;
             if (correctIngredients == recipe.Length)
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
         menuManager.ShowMainMenu(false);
         playerCamera.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
+        GenerateRecipe();
         StartCoroutine(StartGameCoroutine());
     }
 

@@ -609,7 +609,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.772152, y: 1}
+    m_SensorSize: {x: 1.7782383, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0
@@ -7256,7 +7256,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43864
+  m_Name: pb_Mesh70752
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7626,7 +7626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8497097187502280597, guid: 3fbe17511c394904db049ca59a167472, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.481
+      value: 0.253
       objectReference: {fileID: 0}
     - target: {fileID: 8497097187502280597, guid: 3fbe17511c394904db049ca59a167472, type: 3}
       propertyPath: m_LocalPosition.z
