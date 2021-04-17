@@ -6448,42 +6448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: facingTorque
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: counterTorque
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: uprightTorque
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: headingPid.dFactor
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: headingPid.iFactor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: headingPid.pFactor
-      value: 9.244
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: correctionPid.dFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: correctionPid.iFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8497097187502280299, guid: 3fbe17511c394904db049ca59a167472, type: 3}
-      propertyPath: correctionPid.pFactor
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8497097187502280594, guid: 3fbe17511c394904db049ca59a167472, type: 3}
       propertyPath: m_Name
       value: Player
