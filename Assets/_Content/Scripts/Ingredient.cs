@@ -8,7 +8,7 @@ public enum IngredientType
     Eye,
     DeadBug,
     Mandrake,
-    Feder,
+    Feather,
     Tooth,
     Plant,
     Mushroom,
