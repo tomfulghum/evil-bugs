@@ -8938,6 +8938,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04d02b2afc7c09049abe398588a92a38, type: 3}
+--- !u!1 &919132149173875469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6959754237458298028, guid: 8f09ec78fe673d542837c1eec3afc32f, type: 3}
+  m_PrefabInstance: {fileID: 7806825350005966753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &919132149173875470
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149173875469}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 5fa6ebc59141b8148bd69f1bb03d9756, type: 3}
 --- !u!1001 &7806825350005966753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9180,6 +9199,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 571886272}
+    - target: {fileID: 8008750286143672031, guid: 1b34531c24ff9654bb094ccd17faed3f, type: 3}
+      propertyPath: badExplosionStrength
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8008750286143672031, guid: 1b34531c24ff9654bb094ccd17faed3f, type: 3}
       propertyPath: ingredientEntries.Array.size
       value: 5
