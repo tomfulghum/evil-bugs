@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int recipeLength = 5;
     [SerializeField] float badExplosionStrength = 10f;
 
+    [Header("Debug")]
+    [SerializeField] bool debugMode = false;
+
     GameState state;
     IngredientType[] recipe;
     List<IngredientType> addedIngredients;
@@ -39,6 +42,13 @@ public class GameManager : MonoBehaviour
         menuManager = FindObjectOfType<MenuManager>();
         addedIngredients = new List<IngredientType>();
         player = FindObjectOfType<FlightMovement>().GetComponent<Rigidbody>();
+
+        if (debugMode)
+        {
+            StartGame();
+            return;
+        }
+
         state = GameState.Menu;
         player.isKinematic = true;
         inputDisabled = true;
