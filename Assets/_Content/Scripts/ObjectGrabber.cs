@@ -50,7 +50,7 @@ public class ObjectGrabber : MonoBehaviour
         animator.SetBool("Grabbed", true);
     }
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Grabbable"))
         {
@@ -59,9 +59,19 @@ public class ObjectGrabber : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        var joint = other.GetComponent<ConfigurableJoint>();
+        if (joint != null && joint == grabbableObject)
+        {
+            localGrabPosition = grabbableObject.transform.InverseTransformPoint(transform.position);
+        }
+    }
+
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == grabbableObject)
+        var joint = other.GetComponent<ConfigurableJoint>();
+        if (joint != null && joint == grabbableObject)
             grabbableObject = null;
     }
 }
