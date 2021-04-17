@@ -15,6 +15,8 @@ public class ObjectGrabber : MonoBehaviour
     Rigidbody rb;
     SphereCollider coll;
 
+    public bool grabbed { get; private set; }
+
     void Awake()
     {
         manager = FindObjectOfType<GameManager>();
@@ -52,6 +54,7 @@ public class ObjectGrabber : MonoBehaviour
             grabbedObject.zMotion = ConfigurableJointMotion.Free;
             grabbedObject = null;
             animator.SetBool("Grabbed", false);
+            grabbed = false;
             return;
         }
         else if (!grabbableObject)
@@ -66,5 +69,6 @@ public class ObjectGrabber : MonoBehaviour
         grabbedObject.yMotion = ConfigurableJointMotion.Limited;
         grabbedObject.zMotion = ConfigurableJointMotion.Limited;
         animator.SetBool("Grabbed", true);
+        grabbed = true;
     }
 }

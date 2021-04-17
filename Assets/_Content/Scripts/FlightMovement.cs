@@ -33,11 +33,13 @@ public class FlightMovement : MonoBehaviour
 
     GameManager manager;
     Rigidbody rb;
+    ObjectGrabber grabber;
 
     void Awake()
     {
         manager = FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody>();
+        grabber = GetComponentInChildren<ObjectGrabber>();
     }
 
     // Start is called before the first frame update
@@ -48,7 +50,7 @@ public class FlightMovement : MonoBehaviour
 
     void Update()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, out _, groundCheckDistance, groundMask, QueryTriggerInteraction.Ignore);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, out _, groundCheckDistance, groundMask, QueryTriggerInteraction.Ignore) && !grabber.grabbed;
         animator.SetBool("Grounded", isGrounded);
     }
 
