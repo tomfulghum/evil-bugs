@@ -8,6 +8,9 @@ public class ObjectGrabber : MonoBehaviour
     ConfigurableJoint grabbableObject;
     Vector3 localGrabPosition;
 
+    [Header("Animation")]
+    [SerializeField] Animator animator;
+
     GameManager manager;
     Rigidbody rb;
 
@@ -30,6 +33,7 @@ public class ObjectGrabber : MonoBehaviour
             grabbedObject.yMotion = ConfigurableJointMotion.Free;
             grabbedObject.zMotion = ConfigurableJointMotion.Free;
             grabbedObject = null;
+            animator.SetBool("Grabbed", false);
             return;
         }
         else if (!grabbableObject)
@@ -43,6 +47,7 @@ public class ObjectGrabber : MonoBehaviour
         grabbedObject.xMotion = ConfigurableJointMotion.Limited;
         grabbedObject.yMotion = ConfigurableJointMotion.Limited;
         grabbedObject.zMotion = ConfigurableJointMotion.Limited;
+        animator.SetBool("Grabbed", true);
     }
 
     void OnTriggerStay(Collider other)
