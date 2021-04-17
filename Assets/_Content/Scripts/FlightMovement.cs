@@ -61,6 +61,9 @@ public class FlightMovement : MonoBehaviour
         if (direction != Vector3.zero)
             facingDirection = direction;
 
+        if (manager && manager.inputDisabled)
+            return;
+
         var force = direction * acceleration;
         rb.AddForce(force, ForceMode.Acceleration);
 

@@ -14,6 +14,25 @@ CapsuleCollider:
   m_Height: 1.57
   m_Direction: 2
   m_Center: {x: 0, y: 0.41, z: 0.12}
+--- !u!95 &1969437988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527335467752269389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1596f257f50c2bd4bb2b7f58983ad05c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8154593503055277291
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00da36595d8a7ff4580ec23c057621d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1969437988}
 --- !u!1 &8497097186758932555
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,6 +310,11 @@ MonoBehaviour:
   facingTorque: 50
   uprightTorque: 10
   angularCorrectionTime: 0.1
+  groundCheckDistance: 0.23
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1
+  animator: {fileID: 1969437988}
 --- !u!1001 &4337799023572261660
 PrefabInstance:
   m_ObjectHideFlags: 0

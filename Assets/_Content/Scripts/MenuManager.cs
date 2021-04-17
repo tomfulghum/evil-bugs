@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject MainMenu;
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject pauseMenu;
 
     public void ShowMainMenu(bool show)
     {
-        MainMenu.SetActive(show);
+        mainMenu.SetActive(show);
+    }
+
+    public void ShowPauseMenu(bool show)
+    {
+        pauseMenu.SetActive(show);
     }
 }
