@@ -6,6 +6,7 @@ public enum IngredientType
 {
     Eye,
     Ratpoop,
+    Cleanser,
     None
 }
 

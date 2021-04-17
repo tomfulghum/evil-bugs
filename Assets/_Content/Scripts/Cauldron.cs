@@ -22,9 +22,13 @@ public class Cauldron : MonoBehaviour
     {
         if (other.CompareTag("Grabbable"))
         {
-            var type = other.GetComponent<Ingredient>().type;
-            manager.AddIngredient(type);
-            Destroy(other.transform.parent.gameObject);
+            var ingredient = other.GetComponent<Ingredient>();
+            if (ingredient)
+            {
+                var type = ingredient.type;
+                manager.AddIngredient(type);
+                Destroy(other.transform.parent.gameObject);
+            }
         }
     }
 }

@@ -8,15 +8,20 @@ public class ObjectGrabber : MonoBehaviour
     ConfigurableJoint grabbableObject;
     Vector3 localGrabPosition;
 
+    GameManager manager;
     Rigidbody rb;
 
     void Awake()
     {
+        manager = FindObjectOfType<GameManager>();
         rb = GetComponentInParent<Rigidbody>();
     }
 
     public void OnGrab()
     {
+        if (manager.inputDisabled)
+            return;
+
         if (grabbedObject)
         {
             grabbedObject.connectedBody = null;

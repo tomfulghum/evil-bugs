@@ -23,11 +23,12 @@ public class FlightMovement : MonoBehaviour
     Vector3 facingDirection;
     Vector3 angularCorrectionVelocity;
 
+    GameManager manager;
     Rigidbody rb;
-
 
     void Awake()
     {
+        manager = FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -67,6 +68,9 @@ public class FlightMovement : MonoBehaviour
 
     public void OnFlap()
     {
+        if (manager.inputDisabled)
+            return;
+
         float forceMultiplier = 1f;
         if (rb.velocity.y > 0)
             forceMultiplier = 1f - Mathf.InverseLerp(0f, maxUpwardVelocity, rb.velocity.y);
@@ -76,6 +80,9 @@ public class FlightMovement : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
+        if (manager.inputDisabled)
+            return;
+
         movementInput = value.Get<Vector2>();
     }
 }

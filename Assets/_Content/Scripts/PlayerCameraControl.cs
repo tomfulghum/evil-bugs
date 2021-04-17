@@ -14,11 +14,13 @@ public class PlayerCameraControl : MonoBehaviour
     float mouseDeltaY;
     float rotX;
     float rotY;
-    
+
+    GameManager manager;
     Transform trans;
 
     void Awake()
     {
+        manager = FindObjectOfType<GameManager>();
         trans = transform;
     }
 
@@ -27,8 +29,6 @@ public class PlayerCameraControl : MonoBehaviour
     {
         rotX = 0;
         rotY = 0;
-
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -43,11 +43,17 @@ public class PlayerCameraControl : MonoBehaviour
 
     public void OnLookX(InputValue value)
     {
+        if (manager.inputDisabled)
+            return;
+
         mouseDeltaX = (float)value.Get();
     }
 
     public void OnLookY(InputValue value)
     {
+        if (manager.inputDisabled)
+            return;
+
         mouseDeltaY = (float)value.Get();
     }
 }
