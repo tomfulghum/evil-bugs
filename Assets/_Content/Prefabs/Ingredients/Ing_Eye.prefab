@@ -13,6 +13,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.01
   m_Center: {x: 1.7388151e-18, y: -0.0000000032596283, z: -0.00024471706}
+--- !u!114 &6251109117709946671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375432659323637202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af9fedc6980be8499c9847812b4dbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1001 &717382762589188227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114,6 +127,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -18.96
       objectReference: {fileID: 0}
+    - target: {fileID: 5947905937065738777, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
+      propertyPath: m_Mass
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738778, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -160,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738783, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_Name
-      value: GrababbleObject
+      value: Ing_Eye
       objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738783, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_IsActive

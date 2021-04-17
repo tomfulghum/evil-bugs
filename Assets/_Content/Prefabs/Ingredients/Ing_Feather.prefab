@@ -14,6 +14,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: e92f354599311484fb19dc02f6fc9fac, type: 3}
+--- !u!114 &7230522798840245941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230646507637588725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af9fedc6980be8499c9847812b4dbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
 --- !u!1001 &1312149477906371074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28,6 +41,14 @@ PrefabInstance:
     - target: {fileID: 5947905937065738776, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947905937065738777, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
+      propertyPath: m_Drag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947905937065738777, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
+      propertyPath: m_Mass
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738778, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_RootOrder

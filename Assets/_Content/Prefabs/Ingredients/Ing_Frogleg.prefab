@@ -14,6 +14,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 1818444a78a65f84ca0b4670c3a44d9e, type: 3}
+--- !u!114 &8340334934413808501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889411570612248719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af9fedc6980be8499c9847812b4dbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &1655600636324918150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23,11 +36,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5947905937065738776, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0
+      value: -10.804
       objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738776, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0
+      value: 11.651
+      objectReference: {fileID: 0}
+    - target: {fileID: 5947905937065738776, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: -18.567
       objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738778, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_RootOrder
@@ -75,7 +92,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738783, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_Name
-      value: GrababbleObject
+      value: Ing_Frogleg
       objectReference: {fileID: 0}
     - target: {fileID: 5947905937065738783, guid: 53c2d44e3cd3cfa45bb55bb723c99006, type: 3}
       propertyPath: m_IsActive
