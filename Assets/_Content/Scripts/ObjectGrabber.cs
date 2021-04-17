@@ -13,11 +13,29 @@ public class ObjectGrabber : MonoBehaviour
 
     GameManager manager;
     Rigidbody rb;
+    SphereCollider coll;
 
     void Awake()
     {
         manager = FindObjectOfType<GameManager>();
         rb = GetComponentInParent<Rigidbody>();
+        coll = GetComponent<SphereCollider>();
+    }
+
+    void Update()
+    {
+        var collisions = Physics.OverlapSphere(transform.TransformPoint(coll.center), coll.radius);
+        foreach (var collider in collisions)
+        {
+            if (collider.CompareTag("Grabbable"))
+            {
+                grabbableObject = collider.GetComponentInParent<ConfigurableJoint>();
+                localGrabPosition = grabbableObject.transform.InverseTransformPoint(transform.position);
+                break;
+            }
+
+            grabbableObject = null;
+        }
     }
 
     public void OnGrab()
@@ -48,30 +66,5 @@ public class ObjectGrabber : MonoBehaviour
         grabbedObject.yMotion = ConfigurableJointMotion.Limited;
         grabbedObject.zMotion = ConfigurableJointMotion.Limited;
         animator.SetBool("Grabbed", true);
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Grabbable"))
-        {
-            grabbableObject = other.GetComponentInParent<ConfigurableJoint>();
-            localGrabPosition = grabbableObject.transform.InverseTransformPoint(transform.position);
-        }
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        var joint = other.GetComponent<ConfigurableJoint>();
-        if (joint != null && joint == grabbableObject)
-        {
-            localGrabPosition = grabbableObject.transform.InverseTransformPoint(transform.position);
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        var joint = other.GetComponent<ConfigurableJoint>();
-        if (joint != null && joint == grabbableObject)
-            grabbableObject = null;
     }
 }
