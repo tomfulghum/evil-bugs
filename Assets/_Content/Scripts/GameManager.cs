@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     MenuManager menuManager;
 
     public bool inputDisabled { get; private set; }
+    public bool cameraDisabled { get; private set; }
     public bool paused { get; private set; }
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         addedIngredients = new List<IngredientType>();
         state = GameState.Menu;
         inputDisabled = true;
+        cameraDisabled = true;
         paused = false;
     }
 
@@ -65,6 +67,7 @@ public class GameManager : MonoBehaviour
             var explosionDirection = Random.onUnitSphere;
             explosionDirection = new Vector3(explosionDirection.x, Mathf.Abs(explosionDirection.y), explosionDirection.z);
             playerRb.AddForce(explosionDirection * badExplosionStrength, ForceMode.Impulse);
+            playerRb.AddTorque(explosionDirection * badExplosionStrength);
             StartCoroutine(BadIngredientCoroutine());
             return;
         }
@@ -90,12 +93,18 @@ public class GameManager : MonoBehaviour
     {
         if (win)
         {
-            // yay
+            state = GameState.End;
+            menuManager.ShowWinMenu(true);
+            inputDisabled = true;
+            cameraDisabled = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
     public void OnReset()
     {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -108,6 +117,7 @@ public class GameManager : MonoBehaviour
         if (paused)
         {
             state = GameState.Paused;
+            cameraDisabled = true;
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             menuManager.ShowPauseMenu(true);
@@ -115,6 +125,7 @@ public class GameManager : MonoBehaviour
         else
         {
             state = GameState.Running;
+            cameraDisabled = false;
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
             menuManager.ShowPauseMenu(false);
@@ -125,6 +136,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         inputDisabled = false;
+        cameraDisabled = false;
     }
 
     IEnumerator BadIngredientCoroutine()

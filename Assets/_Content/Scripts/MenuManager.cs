@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject winMenu;
 
     public void ShowMainMenu(bool show)
     {
@@ -15,5 +16,10 @@ public class MenuManager : MonoBehaviour
     public void ShowPauseMenu(bool show)
     {
         pauseMenu.SetActive(show);
+    }
+
+    public void ShowWinMenu(bool show)
+    {
+        winMenu.SetActive(show);
     }
 }
