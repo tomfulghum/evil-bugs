@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     GameState state;
     IngredientType[] recipe;
     List<IngredientType> addedIngredients;
+    Rigidbody player;
 
     MenuManager menuManager;
 
@@ -37,7 +38,9 @@ public class GameManager : MonoBehaviour
     {
         menuManager = FindObjectOfType<MenuManager>();
         addedIngredients = new List<IngredientType>();
+        player = FindObjectOfType<FlightMovement>().GetComponent<Rigidbody>();
         state = GameState.Menu;
+        player.isKinematic = true;
         inputDisabled = true;
         cameraDisabled = true;
         paused = false;
@@ -66,11 +69,10 @@ public class GameManager : MonoBehaviour
         if (type != recipe[addedIngredients.Count])
         {
             Debug.Log("BAD");
-            var playerRb = FindObjectOfType<FlightMovement>().GetComponent<Rigidbody>();
             var explosionDirection = Random.onUnitSphere;
             explosionDirection = new Vector3(explosionDirection.x, Mathf.Abs(explosionDirection.y), explosionDirection.z);
-            playerRb.AddForce(explosionDirection * badExplosionStrength, ForceMode.Impulse);
-            playerRb.AddTorque(explosionDirection * badExplosionStrength);
+            player.AddForce(explosionDirection * badExplosionStrength, ForceMode.Impulse);
+            player.AddTorque(explosionDirection * badExplosionStrength);
             StartCoroutine(BadIngredientCoroutine());
             return;
         }
@@ -138,6 +140,7 @@ public class GameManager : MonoBehaviour
     IEnumerator StartGameCoroutine()
     {
         yield return new WaitForSeconds(2f);
+        player.isKinematic = false;
         inputDisabled = false;
         cameraDisabled = false;
     }
