@@ -19,7 +19,7 @@ public class ObjectGrabber : MonoBehaviour
 
     public void OnGrab()
     {
-        if (manager.inputDisabled)
+        if (manager && manager.inputDisabled)
             return;
 
         if (grabbedObject)
