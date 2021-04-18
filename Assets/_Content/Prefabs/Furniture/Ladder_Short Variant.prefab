@@ -71,7 +71,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3b0f21f4bac179f4da2fec391f417612, type: 2}
     - target: {fileID: 919132149155446097, guid: 65930e7fcb295db40b5961a46b48c64d, type: 3}
       propertyPath: m_Name
-      value: Ladder_Short
+      value: Ladder_Short Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65930e7fcb295db40b5961a46b48c64d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65930e7fcb295db40b5961a46b48c64d, type: 3}

@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1630901155944460817
 Transform:
@@ -1761,11 +1761,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8a454ac71c9289a4f81475b4363d15c8, type: 2}
     - target: {fileID: 919132149155446097, guid: de2c8be85755af042887445ff9f551cb, type: 3}
       propertyPath: m_Name
-      value: Stool (1)
+      value: Stool (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: de2c8be85755af042887445ff9f551cb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de2c8be85755af042887445ff9f551cb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de2c8be85755af042887445ff9f551cb, type: 3}

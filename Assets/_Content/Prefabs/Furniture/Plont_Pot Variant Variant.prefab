@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1208758604, guid: 4ea9d47381ce7874eb1039f9e14bf5bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1208758605, guid: 4ea9d47381ce7874eb1039f9e14bf5bf, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -21,7 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5988495111757595689, guid: 4ea9d47381ce7874eb1039f9e14bf5bf, type: 3}
       propertyPath: m_Name
-      value: Plont_Pot Variant
+      value: Plont_Pot Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988495111757595689, guid: 4ea9d47381ce7874eb1039f9e14bf5bf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6363788858387717779, guid: 4ea9d47381ce7874eb1039f9e14bf5bf, type: 3}
       propertyPath: m_RootOrder
@@ -84,6 +92,10 @@ PrefabInstance:
     - target: {fileID: 1249750826385576745, guid: 058d5679b3935304f94b992a6848dffe, type: 3}
       propertyPath: m_Name
       value: Plont_Pot_Earth Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249750826385576745, guid: 058d5679b3935304f94b992a6848dffe, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1879075739027294611, guid: 058d5679b3935304f94b992a6848dffe, type: 3}
       propertyPath: m_RootOrder

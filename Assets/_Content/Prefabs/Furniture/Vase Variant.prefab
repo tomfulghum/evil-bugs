@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1659678074
 Transform:
@@ -3031,7 +3031,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d0c986fd89be453448018c465667cdd2, type: 2}
     - target: {fileID: 919132149155446097, guid: 30acea589b071624f8d5857d3beab534, type: 3}
       propertyPath: m_Name
-      value: Vase
+      value: Vase Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30acea589b071624f8d5857d3beab534, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30acea589b071624f8d5857d3beab534, type: 3}

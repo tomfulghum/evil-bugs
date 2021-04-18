@@ -71,7 +71,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1a1bcc273bc4cc246bdcf9d3c5e569d4, type: 2}
     - target: {fileID: 919132149155446097, guid: d5dde25c4f848cb419f86ef31861cf1f, type: 3}
       propertyPath: m_Name
-      value: Plont_Pot_Earth
+      value: Plont_Pot_Earth Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d5dde25c4f848cb419f86ef31861cf1f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5dde25c4f848cb419f86ef31861cf1f, type: 3}

@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 847104186755145189}
   - component: {fileID: 2096428493001256317}
   m_Layer: 0
-  m_Name: Lable
+  m_Name: Lable_Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7256925384624050184
 Transform:

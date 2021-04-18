@@ -71,7 +71,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3908ea0574ba86347bb5a72f67fa31eb, type: 2}
     - target: {fileID: 919132149155446097, guid: 2296b3dd81661f54296cebe5ad3bd3a4, type: 3}
       propertyPath: m_Name
-      value: Roof_Beam
+      value: Roof_Beam Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2296b3dd81661f54296cebe5ad3bd3a4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2296b3dd81661f54296cebe5ad3bd3a4, type: 3}

@@ -33,7 +33,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6871482204892225129
 Transform:
@@ -1696,7 +1696,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7954736248712875423
 Transform:
@@ -1864,6 +1864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plont_Pot_Earth (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d5dde25c4f848cb419f86ef31861cf1f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5dde25c4f848cb419f86ef31861cf1f, type: 3}
 --- !u!1 &3072644697254461799 stripped
@@ -1942,6 +1946,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 528b49ac5d09e6749aaf68bb794b283a, type: 3}
       propertyPath: m_Name
       value: Plont_Pot_Rope (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 528b49ac5d09e6749aaf68bb794b283a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 528b49ac5d09e6749aaf68bb794b283a, type: 3}

@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &136208049
 Transform:
@@ -581,7 +581,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0153dd654dc584b42a9fa60d5cd73a64, type: 2}
     - target: {fileID: 919132149155446097, guid: 68fcbcecda56b8c49abc6aafe7dfd5e0, type: 3}
       propertyPath: m_Name
-      value: Cauldron_Chain
+      value: Cauldron_Chain Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68fcbcecda56b8c49abc6aafe7dfd5e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68fcbcecda56b8c49abc6aafe7dfd5e0, type: 3}

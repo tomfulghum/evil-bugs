@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &688706030
 Transform:
@@ -1953,7 +1953,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3e10116fb23e32a469b6e5a63b828bbf, type: 2}
     - target: {fileID: 919132149155446097, guid: 1063cb5a4e53bcb4fb33ae100551e54e, type: 3}
       propertyPath: m_Name
-      value: Candle_Plate
+      value: Candle_Plate Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1063cb5a4e53bcb4fb33ae100551e54e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1063cb5a4e53bcb4fb33ae100551e54e, type: 3}
