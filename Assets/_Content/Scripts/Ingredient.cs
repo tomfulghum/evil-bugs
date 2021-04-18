@@ -7,10 +7,10 @@ public enum IngredientType
     Frogleg,
     Eye,
     DeadBug,
-    Mandrake,
+    Egg,
     Feather,
     Tooth,
-    Plant,
+    DryLeaf,
     Mushroom,
     Cleanser,
     None
