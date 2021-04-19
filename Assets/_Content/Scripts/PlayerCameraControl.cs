@@ -27,8 +27,8 @@ public class PlayerCameraControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rotX = 0;
-        rotY = 0;
+        rotX = 42;
+        rotY = 40;
     }
 
     // Update is called once per frame
@@ -39,6 +39,9 @@ public class PlayerCameraControl : MonoBehaviour
         rotX = Mathf.Clamp(rotX, -89f, 89f);
 
         trans.rotation = Quaternion.Euler(rotX, rotY, 0);
+
+        mouseDeltaX = 0;
+        mouseDeltaY = 0;
     }
 
     public void OnLookX(InputValue value)
@@ -46,7 +49,7 @@ public class PlayerCameraControl : MonoBehaviour
         if (manager && manager.cameraDisabled)
             return;
 
-        mouseDeltaX = (float)value.Get();
+        mouseDeltaX += (float)value.Get();
     }
 
     public void OnLookY(InputValue value)
@@ -54,6 +57,6 @@ public class PlayerCameraControl : MonoBehaviour
         if (manager && manager.cameraDisabled)
             return;
 
-        mouseDeltaY = (float)value.Get();
+        mouseDeltaY += (float)value.Get();
     }
 }
