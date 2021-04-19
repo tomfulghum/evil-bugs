@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Embers
+  m_Shader: {fileID: -6465566751694194690, guid: f1c96ea9cef35894181357e820383228, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - CloudIntensity: 0.7
+    - CloudScale: 0.96
+    - CloudSpeed: 1
+    - Depth: 0.1
+    - DepthToAlpha: 0.28
+    - EdgeMaxAlpha: 0
+    - RippleIntensity: 0.755
+    - RippleSpeed: 2
+    m_Colors:
+    - BaseColor: {r: 1, g: 0.39193493, b: 0, a: 0}
+    - DepthColor: {r: 0.3301887, g: 0.1520781, b: 0, a: 0}
+  m_BuildTextureStacks: []

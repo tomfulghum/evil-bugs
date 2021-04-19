@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.ComponentModel;
 
 public enum IngredientType
 {
-    Frogleg,
-    Eye,
-    DeadBug,
-    Egg,
-    Feather,
-    Tooth,
-    DryLeaf,
-    Mushroom,
+    [Description("Frog Leg")] FrogLeg,
+    [Description("Eye")] Eye,
+    [Description("Dead Bug")] DeadBug,
+    [Description("Egg")] Egg,
+    [Description("Feather")] Feather,
+    [Description("Tooth")] Tooth,
+    [Description("Dry Leaf")] DryLeaf,
+    [Description("Mushroom")] Mushroom,
     Cleanser,
     None
 }
