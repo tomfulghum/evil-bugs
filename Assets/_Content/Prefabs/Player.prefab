@@ -9827,8 +9827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c1841c055b38c43a739e47d53909fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSensitivity: 0.2
-  verticalSensitivity: 0.2
+  horizontalSensitivity: 0.1
+  verticalSensitivity: 0.1
   invertHorizontal: 0
   invertVertical: 1
 --- !u!1 &8497097187502280594
