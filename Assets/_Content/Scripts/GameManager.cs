@@ -116,6 +116,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
     public void OnReset()
     {
         Time.timeScale = 1f;
