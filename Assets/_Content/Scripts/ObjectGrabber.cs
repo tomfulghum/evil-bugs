@@ -13,7 +13,7 @@ public class ObjectGrabber : MonoBehaviour
 
     GameManager manager;
     Rigidbody rb;
-    SphereCollider coll;
+    CapsuleCollider coll;
 
     public bool grabbed { get; private set; }
 
@@ -21,12 +21,14 @@ public class ObjectGrabber : MonoBehaviour
     {
         manager = FindObjectOfType<GameManager>();
         rb = GetComponentInParent<Rigidbody>();
-        coll = GetComponent<SphereCollider>();
+        coll = GetComponent<CapsuleCollider>();
     }
 
     void Update()
     {
-        var collisions = Physics.OverlapSphere(transform.TransformPoint(coll.center), coll.radius);
+        var point1 = transform.TransformPoint(coll.center + new Vector3(0, 0, coll.height / 2));
+        var point2 = transform.TransformPoint(coll.center - new Vector3(0, 0, coll.height / 2));
+        var collisions = Physics.OverlapCapsule(point1, point2, coll.radius);
         foreach (var collider in collisions)
         {
             if (collider.CompareTag("Grabbable"))
@@ -38,6 +40,9 @@ public class ObjectGrabber : MonoBehaviour
 
             grabbableObject = null;
         }
+
+        if (!grabbedObject)
+            animator.SetBool("Grabbed", false);
     }
 
     public void OnGrab()
