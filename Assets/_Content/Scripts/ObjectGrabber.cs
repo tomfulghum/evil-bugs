@@ -34,7 +34,7 @@ public class ObjectGrabber : MonoBehaviour
             if (collider.CompareTag("Grabbable"))
             {
                 grabbableObject = collider.GetComponentInParent<ConfigurableJoint>();
-                localGrabPosition = grabbableObject.transform.InverseTransformPoint(transform.position);
+                localGrabPosition = grabbableObject.transform.InverseTransformPoint(collider.ClosestPoint(transform.position));
                 break;
             }
 
