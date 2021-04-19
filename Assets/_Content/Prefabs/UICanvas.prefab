@@ -989,8 +989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 96}
-  m_SizeDelta: {x: 1000, y: 138.3478}
+  m_AnchoredPosition: {x: 0, y: 140}
+  m_SizeDelta: {x: 1448.6, y: 138.3478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3928376236653620109
 CanvasRenderer:
@@ -1022,10 +1022,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'You did it!
 
-    You can continue on your evil path for world domination.'
+    You can continue on your evil path towards world domination.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0b2aee048f502654e8ecce12ff38bb4f, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: cc66bab3decb8da42ab07391235c608b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1049,8 +1049,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56
-  m_fontSizeBase: 56
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
