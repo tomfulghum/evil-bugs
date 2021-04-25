@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         {
             int ingredientIndex = Random.Range(0, (int)IngredientType.Cleanser);
             recipe[i] = (IngredientType)ingredientIndex;
-            ingredientEntries[i].text = recipe[i].ToDescription();
+            ingredientEntries[i].text = (i + 1) + ". " + recipe[i].ToDescription();
             Debug.Log(recipe[i]);
         }
     }
