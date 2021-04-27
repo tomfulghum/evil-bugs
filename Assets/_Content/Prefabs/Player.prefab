@@ -9933,7 +9933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7146a7c18aa67e4db49312108baf970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flapForce: 200
+  flapForce: 250
   maxUpwardVelocity: 6
   acceleration: 10
   maxVelocity: 5

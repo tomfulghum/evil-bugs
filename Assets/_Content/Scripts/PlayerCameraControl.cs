@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Metamothosis.GameEvents;
 
 public class PlayerCameraControl : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerCameraControl : MonoBehaviour
     [SerializeField] bool invertHorizontal = false;
     [SerializeField] bool invertVertical = false;
 
+    float sensitivity;
     float mouseDeltaX;
     float mouseDeltaY;
     float rotX;
@@ -18,10 +20,21 @@ public class PlayerCameraControl : MonoBehaviour
     GameManager manager;
     Transform trans;
 
+    void OnEnable()
+    {
+        GameEvent<MouseSensitivityChangedEvent>.Register(OnMouseSensitivityChanged);
+    }
+
+    void OnDisable()
+    {
+        GameEvent<MouseSensitivityChangedEvent>.Deregister(OnMouseSensitivityChanged);
+    }
+
     void Awake()
     {
         manager = FindObjectOfType<GameManager>();
         trans = transform;
+        sensitivity = 0.5f;
     }
 
     // Start is called before the first frame update
@@ -34,8 +47,8 @@ public class PlayerCameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotX += mouseDeltaY * verticalSensitivity * (invertVertical ? -1 : 1);
-        rotY += mouseDeltaX * horizontalSensitivity * (invertHorizontal ? -1 : 1);
+        rotX += mouseDeltaY * verticalSensitivity * sensitivity * (invertVertical ? -1 : 1);
+        rotY += mouseDeltaX * horizontalSensitivity * sensitivity * (invertHorizontal ? -1 : 1);
         rotX = Mathf.Clamp(rotX, -89f, 89f);
 
         trans.rotation = Quaternion.Euler(rotX, rotY, 0);
@@ -58,5 +71,10 @@ public class PlayerCameraControl : MonoBehaviour
             return;
 
         mouseDeltaY += (float)value.Get();
+    }
+
+    void OnMouseSensitivityChanged(float value)
+    {
+        sensitivity = value;
     }
 }
