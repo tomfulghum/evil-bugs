@@ -75,7 +75,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ba6876ad3f1051944968a5f18773ce55, type: 2}
     - target: {fileID: 919132149155446097, guid: 5b10e6a799426ea44a89e5a2c651ebbe, type: 3}
       propertyPath: m_Name
-      value: Book (2)
+      value: BookGreen
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5b10e6a799426ea44a89e5a2c651ebbe, type: 3}
       propertyPath: m_StaticEditorFlags

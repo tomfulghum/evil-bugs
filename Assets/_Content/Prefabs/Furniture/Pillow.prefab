@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2802493136563296847}
   - component: {fileID: 8969965702317527827}
   m_Layer: 0
-  m_Name: Pillow (1)
+  m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,6 +94,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4747795219173961485, guid: 6773f6d9fa482644899c0aa8b4816c81, type: 3}
