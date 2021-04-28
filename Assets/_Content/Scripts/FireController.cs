@@ -12,8 +12,7 @@ public class FireController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < amount; i++)
-        {
+        for (int i = 0; i < amount; i++) {
             float angle = i * Mathf.PI * 2f / amount;
             Vector3 pos = new Vector3(Mathf.Cos(angle) * radius, 1f, Mathf.Sin(angle) * radius);
             Quaternion rot = Quaternion.Euler(tilt, (Mathf.Rad2Deg * -angle) + 90f, 0f);
@@ -27,6 +26,6 @@ public class FireController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

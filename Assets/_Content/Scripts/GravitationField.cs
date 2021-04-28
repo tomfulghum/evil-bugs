@@ -16,8 +16,7 @@ public class GravitationField : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player)
-        {
+        if (player) {
             var gravitationVector = (transform.position - player.transform.position);
             var playerDistance = gravitationVector.magnitude;
             var gravitationStrength = ((Mathf.Sin(Mathf.InverseLerp(0f, coll.radius, playerDistance) * Mathf.PI + (Mathf.PI / 2)) + 1) / 2) * gravitationForce;
@@ -29,16 +28,12 @@ public class GravitationField : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             player = other.GetComponentInParent<Rigidbody>();
-        }
     }
 
     public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             player = null;
-        }
     }
 }

@@ -29,10 +29,8 @@ public class ObjectGrabber : MonoBehaviour
         var point1 = transform.TransformPoint(coll.center + new Vector3(0, 0, coll.height / 2));
         var point2 = transform.TransformPoint(coll.center - new Vector3(0, 0, coll.height / 2));
         var collisions = Physics.OverlapCapsule(point1, point2, coll.radius);
-        foreach (var collider in collisions)
-        {
-            if (collider.CompareTag("Grabbable"))
-            {
+        foreach (var collider in collisions) {
+            if (collider.CompareTag("Grabbable")) {
                 grabbableObject = collider.GetComponentInParent<ConfigurableJoint>();
                 localGrabPosition = grabbableObject.transform.InverseTransformPoint(collider.ClosestPoint(transform.position));
                 break;
@@ -50,8 +48,7 @@ public class ObjectGrabber : MonoBehaviour
         if (manager && manager.inputDisabled)
             return;
 
-        if (grabbedObject)
-        {
+        if (grabbedObject) {
             grabbedObject.connectedBody = null;
             grabbedObject.anchor = Vector3.zero;
             grabbedObject.xMotion = ConfigurableJointMotion.Free;
@@ -61,9 +58,7 @@ public class ObjectGrabber : MonoBehaviour
             animator.SetBool("Grabbed", false);
             grabbed = false;
             return;
-        }
-        else if (!grabbableObject)
-        {
+        } else if (!grabbableObject) {
             return;
         }
 

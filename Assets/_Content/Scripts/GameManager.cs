@@ -43,8 +43,7 @@ public class GameManager : MonoBehaviour
         addedIngredients = new List<IngredientType>();
         player = FindObjectOfType<FlightMovement>().GetComponent<Rigidbody>();
 
-        if (debugMode)
-        {
+        if (debugMode) {
             StartGame();
             return;
         }
@@ -65,8 +64,7 @@ public class GameManager : MonoBehaviour
     void GenerateRecipe()
     {
         recipe = new IngredientType[recipeLength];
-        for (int i = 0; i < recipeLength; i++)
-        {
+        for (int i = 0; i < recipeLength; i++) {
             int ingredientIndex = Random.Range(0, (int)IngredientType.Cleanser);
             recipe[i] = (IngredientType)ingredientIndex;
             ingredientEntries[i].text = (i + 1) + ". " + recipe[i].ToDescription();
@@ -76,8 +74,7 @@ public class GameManager : MonoBehaviour
 
     public void AddIngredient(IngredientType type)
     {
-        if (type != recipe[addedIngredients.Count])
-        {
+        if (type != recipe[addedIngredients.Count]) {
             Debug.Log("BAD");
             var explosionDirection = Random.onUnitSphere;
             explosionDirection = new Vector3(explosionDirection.x, Mathf.Abs(explosionDirection.y), explosionDirection.z);
@@ -89,9 +86,7 @@ public class GameManager : MonoBehaviour
 
         addedIngredients.Add(type);
         if (addedIngredients.Count == recipe.Length)
-        {
             EndGame(true);
-        }
     }
 
     public void StartGame()
@@ -106,8 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame(bool win)
     {
-        if (win)
-        {
+        if (win) {
             state = GameState.End;
             menuManager.ShowWinMenu(true);
             inputDisabled = true;
@@ -134,16 +128,13 @@ public class GameManager : MonoBehaviour
             return;
 
         paused = !paused;
-        if (paused)
-        {
+        if (paused) {
             state = GameState.Paused;
             cameraDisabled = true;
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             menuManager.ShowPauseMenu(true);
-        }
-        else
-        {
+        } else {
             state = GameState.Running;
             cameraDisabled = false;
             Cursor.lockState = CursorLockMode.Locked;
