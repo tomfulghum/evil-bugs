@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Metamothosis.GameEvents;
 
 public class PlayerCameraControl : MonoBehaviour
 {
@@ -22,12 +21,12 @@ public class PlayerCameraControl : MonoBehaviour
 
     void OnEnable()
     {
-        GameEvent<MouseSensitivityChangedEvent>.Register(OnMouseSensitivityChanged);
+        SettingsManager.OnSettingsChanged += OnSettingsChanged;
     }
 
     void OnDisable()
     {
-        GameEvent<MouseSensitivityChangedEvent>.Deregister(OnMouseSensitivityChanged);
+        SettingsManager.OnSettingsChanged -= OnSettingsChanged;
     }
 
     void Awake()
@@ -73,8 +72,8 @@ public class PlayerCameraControl : MonoBehaviour
         mouseDeltaY += (float)value.Get();
     }
 
-    void OnMouseSensitivityChanged(float value)
+    void OnSettingsChanged(Metamothosis.Serializable.Settings settings)
     {
-        sensitivity = value;
+        sensitivity = settings.mouseSensitivity;
     }
 }

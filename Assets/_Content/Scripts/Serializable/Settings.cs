@@ -7,10 +7,10 @@ namespace Metamothosis.Serializable
     public class Settings
     {
         // Controls
-        public float mouseSensitivity;
+        public float mouseSensitivity = 1.0f;
 
         // Audio
-        public float soundEffectVolume;
-        public float musicVolume;
+        public float sfxVolume = 1.0f;
+        public float musicVolume = 1.0f;
     }
 }
